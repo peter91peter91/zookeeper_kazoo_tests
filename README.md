@@ -8,7 +8,7 @@ docker run --name ZK382 -t -i zookeeper:3.8.2
 у меня он при такой установке стартовал на айпи 172.17.0.3:2181   (если будет другой,то в скрипте подменить)
 
 1.2)это-только если хотим проверить что подключается клиент к зукиперу.
-sudo docker run -it --rm --link ZK382:zookeeper zookeeper zkCli.sh -server zookeeper
+```sudo docker run -it --rm --link ZK382:zookeeper zookeeper zkCli.sh -server zookeeper```
 
 2)стартуем зунавигатор ,чтобы проще было посмотреть на то как исчезает узел эфимерный(разрегистрируется сервис)
 ```
