@@ -33,3 +33,5 @@ python2 kazoo_register_0.py
 и спустя 5сек удаляется узел со свежевыданным PID "процесса слежения" внутри {"pid":26303}
 
 .....Error: KeeperErrorCode = NoNode for /service_mois_portainer/local_portainer/172.17.0.3:2181:9000
+
+ 
