@@ -1,0 +1,176 @@
+-Принятое подключение к сокету
+ -Запрос на установление сеанса от клиента
+-Клиент пытается установить новую сессию по адресу
+-Установленный сеанс 0x1000065656e0001 с согласованным временем ожидания 5000 для клиента
+
+-Получено исключение KeeperException пользовательского уровня при обработке sessionid:0x1000065656e0001 тип:create cxid:0x1 zxid:0x4f txntype:-1 reqpath:n/ путь к ошибке:/ошибка service_mois_portainer3/портейнер3:KeeperErrorCode = NodeExists для /service_mois_portainer3/портейнер3
+— это тоже не ошибка- Это нормально, потому что некоторых путей еще не существует. В то же время вы также получаете NodeExistsсообщения, поскольку путь уже существует.
+
+-Обработанное завершение сеанса для sessionid:  0x1000065656e0000  и потом для  0x1000065656e0001
+
+-Не удается прочитать дополнительные данные из клиентского sessionid 0x1000065656e0001, вероятно, клиент закрыл сокет
+
+- Истекающий сеанс 0x1000065656e0001,
+
+- Обработанное завершение сеанса для sessionid: 0x1000065656e0001
+
+-Удаление эфемерного узла ....
+
+___
+___
+___
+НИЖЕ ЛОГИ БЕЗ МОНТАЖА
+___
+
+###
+ЭТО СТАРТ СЕРВЕРА ЗУКИПЕРА
+bin/zkServer.sh start
+ПРИ СТАРТЕ УДАЛЯЕТ СТАРЫЕ НОДЫ КОТОРЫЕ УЖЕ НЕ ДЕЙСТВИТЕЛЬНЫ
+ВИДИМО ЛОВИТ НЕУСПЕХ ПРИ ЭТОМ НО ЭТО ШТАТНО, НОДЫ НЕ СУЩЕСТВУЮТ И ТАК УЖЕ , САМИ УМИРАЮТ
+###
+
+2023-08-31 13:56:25,615 [myid:] - INFO  [main:QuorumPeerConfig@136] - Reading configuration from: /opt/zookeeper-3.4.13/bin/../conf/zoo.cfg
+2023-08-31 13:56:25,620 [myid:] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
+2023-08-31 13:56:25,620 [myid:] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 0
+2023-08-31 13:56:25,620 [myid:] - INFO  [main:DatadirCleanupManager@101] - Purge task is not scheduled.
+2023-08-31 13:56:25,621 [myid:] - WARN  [main:QuorumPeerMain@116] - Either no config or no quorum defined in config, running  in standalone mode
+2023-08-31 13:56:25,626 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:hiearchy=default
+2023-08-31 13:56:25,626 [myid:] - DEBUG [main:HierarchyDynamicMBean@260] - postRegister is called.
+2023-08-31 13:56:25,627 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:logger=root
+2023-08-31 13:56:25,627 [myid:] - DEBUG [main:LoggerDynamicMBean@258] - Adding AppenderMBean for appender named ROLLINGFILE
+2023-08-31 13:56:25,629 [myid:] - DEBUG [main:AppenderDynamicMBean@158] - getMBeanInfo called.
+2023-08-31 13:56:25,629 [myid:] - DEBUG [main:AppenderDynamicMBean@337] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:appender=ROLLINGFILE
+2023-08-31 13:56:25,629 [myid:] - DEBUG [main:AppenderDynamicMBean@197] - Adding LayoutMBean:ROLLINGFILE,layout=org.apache.log4j.PatternLayout
+2023-08-31 13:56:25,630 [myid:] - DEBUG [main:LayoutDynamicMBean@140] - getMBeanInfo called.
+2023-08-31 13:56:25,630 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:appender=ROLLINGFILE,layout=org.apache.log4j.PatternLayout
+2023-08-31 13:56:25,630 [myid:] - DEBUG [main:HierarchyDynamicMBean@128] - ---Adding logger [root] as listener.
+2023-08-31 13:56:25,630 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:logger=org.apache.log4j.jmx.LayoutDynamicMBean
+2023-08-31 13:56:25,631 [myid:] - DEBUG [main:HierarchyDynamicMBean@128] - ---Adding logger [org.apache.log4j.jmx.LayoutDynamicMBean] as listener.
+2023-08-31 13:56:25,632 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:logger=org.apache.zookeeper.server.quorum.QuorumPeerMain
+2023-08-31 13:56:25,632 [myid:] - DEBUG [main:HierarchyDynamicMBean@128] - ---Adding logger [org.apache.zookeeper.server.quorum.QuorumPeerMain] as listener.
+2023-08-31 13:56:25,632 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:logger=org.apache.log4j.jmx.LoggerDynamicMBean
+2023-08-31 13:56:25,632 [myid:] - DEBUG [main:HierarchyDynamicMBean@128] - ---Adding logger [org.apache.log4j.jmx.LoggerDynamicMBean] as listener.
+2023-08-31 13:56:25,632 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:logger=org.apache.zookeeper.server.quorum.QuorumPeerConfig
+2023-08-31 13:56:25,632 [myid:] - DEBUG [main:HierarchyDynamicMBean@128] - ---Adding logger [org.apache.zookeeper.server.quorum.QuorumPeerConfig] as listener.
+2023-08-31 13:56:25,632 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:logger=org.apache.zookeeper.server.ZooKeeperServerMain
+2023-08-31 13:56:25,632 [myid:] - DEBUG [main:HierarchyDynamicMBean@128] - ---Adding logger [org.apache.zookeeper.server.ZooKeeperServerMain] as listener.
+2023-08-31 13:56:25,633 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:logger=org.apache.zookeeper.jmx.MBeanRegistry
+2023-08-31 13:56:25,633 [myid:] - DEBUG [main:HierarchyDynamicMBean@128] - ---Adding logger [org.apache.zookeeper.jmx.MBeanRegistry] as listener.
+2023-08-31 13:56:25,633 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:logger=org.apache.log4j.jmx.HierarchyDynamicMBean
+2023-08-31 13:56:25,633 [myid:] - DEBUG [main:HierarchyDynamicMBean@128] - ---Adding logger [org.apache.log4j.jmx.HierarchyDynamicMBean] as listener.
+2023-08-31 13:56:25,633 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:logger=org.apache.log4j.jmx.AppenderDynamicMBean
+2023-08-31 13:56:25,633 [myid:] - DEBUG [main:HierarchyDynamicMBean@128] - ---Adding logger [org.apache.log4j.jmx.AppenderDynamicMBean] as listener.
+2023-08-31 13:56:25,633 [myid:] - DEBUG [main:AbstractDynamicMBean@148] - preRegister called. Server=com.sun.jmx.mbeanserver.JmxMBeanServer@1b701da1, name=log4j:logger=org.apache.zookeeper.server.DatadirCleanupManager
+2023-08-31 13:56:25,633 [myid:] - DEBUG [main:HierarchyDynamicMBean@128] - ---Adding logger [org.apache.zookeeper.server.DatadirCleanupManager] as listener.
+2023-08-31 13:56:25,634 [myid:] - INFO  [main:QuorumPeerConfig@136] - Reading configuration from: /opt/zookeeper-3.4.13/bin/../conf/zoo.cfg
+2023-08-31 13:56:25,634 [myid:] - INFO  [main:ZooKeeperServerMain@98] - Starting server
+2023-08-31 13:56:25,641 [myid:] - INFO  [main:Environment@100] - Server environment:zookeeper.version=3.4.13-2d71af4dbe22557fda74f9a9b4309b15a7487f03, built on 06/29/2018 04:05 GMT
+2023-08-31 13:56:25,641 [myid:] - INFO  [main:Environment@100] - Server environment:host.name=debian1
+2023-08-31 13:56:25,641 [myid:] - INFO  [main:Environment@100] - Server environment:java.version=11.0.20
+2023-08-31 13:56:25,641 [myid:] - INFO  [main:Environment@100] - Server environment:java.vendor=Debian
+2023-08-31 13:56:25,641 [myid:] - INFO  [main:Environment@100] - Server environment:java.home=/usr/lib/jvm/java-11-openjdk-amd64
+2023-08-31 13:56:25,642 [myid:] - INFO  [main:Environment@100] - Server environment:java.class.path=/opt/zookeeper-3.4.13/bin/../build/classes:/opt/zookeeper-3.4.13/bin/../build/lib/*.jar:/opt/zookeeper-3.4.13/bin/../lib/slf4j-log4j12-1.7.25.jar:/opt/zookeeper-3.4.13/bin/../lib/slf4j-api-1.7.25.jar:/opt/zookeeper-3.4.13/bin/../lib/netty-3.10.6.Final.jar:/opt/zookeeper-3.4.13/bin/../lib/log4j-1.2.17.jar:/opt/zookeeper-3.4.13/bin/../lib/jline-0.9.94.jar:/opt/zookeeper-3.4.13/bin/../lib/audience-annotations-0.5.0.jar:/opt/zookeeper-3.4.13/bin/../zookeeper-3.4.13.jar:/opt/zookeeper-3.4.13/bin/../src/java/lib/*.jar:/opt/zookeeper-3.4.13/bin/../conf:
+2023-08-31 13:56:25,642 [myid:] - INFO  [main:Environment@100] - Server environment:java.library.path=/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+2023-08-31 13:56:25,642 [myid:] - INFO  [main:Environment@100] - Server environment:java.io.tmpdir=/tmp
+2023-08-31 13:56:25,642 [myid:] - INFO  [main:Environment@100] - Server environment:java.compiler=<NA>
+2023-08-31 13:56:25,642 [myid:] - INFO  [main:Environment@100] - Server environment:os.name=Linux
+2023-08-31 13:56:25,642 [myid:] - INFO  [main:Environment@100] - Server environment:os.arch=amd64
+2023-08-31 13:56:25,642 [myid:] - INFO  [main:Environment@100] - Server environment:os.version=5.10.0-25-amd64
+2023-08-31 13:56:25,642 [myid:] - INFO  [main:Environment@100] - Server environment:user.name=zk
+2023-08-31 13:56:25,642 [myid:] - INFO  [main:Environment@100] - Server environment:user.home=/home/zk
+2023-08-31 13:56:25,642 [myid:] - INFO  [main:Environment@100] - Server environment:user.dir=/opt/zookeeper-3.4.13
+2023-08-31 13:56:25,647 [myid:] - DEBUG [main:FileTxnSnapLog@81] - Opening datadir:/var/log/zookeeper snapDir:/data/zookeeper
+2023-08-31 13:56:25,651 [myid:] - INFO  [main:ZooKeeperServer@836] - tickTime set to 2000
+2023-08-31 13:56:25,651 [myid:] - INFO  [main:ZooKeeperServer@845] - minSessionTimeout set to -1
+2023-08-31 13:56:25,651 [myid:] - INFO  [main:ZooKeeperServer@854] - maxSessionTimeout set to -1
+2023-08-31 13:56:25,658 [myid:] - INFO  [main:ServerCnxnFactory@117] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2023-08-31 13:56:25,663 [myid:] - INFO  [main:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:2181
+2023-08-31 13:56:25,672 [myid:] - DEBUG [main:FileTxnLog$FileTxnIterator@602] - Created new input stream /var/log/zookeeper/version-2/log.1
+2023-08-31 13:56:25,674 [myid:] - DEBUG [main:FileTxnLog$FileTxnIterator@605] - Created new input archive /var/log/zookeeper/version-2/log.1
+2023-08-31 13:56:25,682 [myid:] - DEBUG [main:DataTree@893] - Deleting ephemeral node /service_mois_portainer/portainer/127.0.0.1:2181:9000 for session 0x100001cdab40002
+2023-08-31 13:56:25,685 [myid:] - DEBUG [main:FileTxnLog$FileTxnIterator@643] - EOF excepton java.io.EOFException: Failed to read /var/log/zookeeper/version-2/log.1
+2023-08-31 13:56:25,686 [myid:] - DEBUG [main:FileTxnLog$FileTxnIterator@602] - Created new input stream /var/log/zookeeper/version-2/log.f
+2023-08-31 13:56:25,686 [myid:] - DEBUG [main:FileTxnLog$FileTxnIterator@605] - Created new input archive /var/log/zookeeper/version-2/log.f
+2023-08-31 13:56:25,687 [myid:] - DEBUG [main:DataTree@893] - Deleting ephemeral node /service_mois_portainer/portainer/127.0.0.1:2181:9000 for session 0x100002eaebe0002
+2023-08-31 13:56:25,689 [myid:] - DEBUG [main:DataTree@873] - Ignoring processTxn failure hdr: -1 : error: -110
+2023-08-31 13:56:25,689 [myid:] - DEBUG [main:FileTxnSnapLog@275] - Ignoring processTxn failure hdr:-1, error: -110, path: null
+2023-08-31 13:56:25,689 [myid:] - DEBUG [main:DataTree@893] - Deleting ephemeral node /service_mois_portainer/portainer/127.0.0.1:2181:9000 for session 0x100002eaebe0005
+2023-08-31 13:56:25,689 [myid:] - DEBUG [main:DataTree@873] - Ignoring processTxn failure hdr: -1 : error: -110
+2023-08-31 13:56:25,690 [myid:] - DEBUG [main:FileTxnSnapLog@275] - Ignoring processTxn failure hdr:-1, error: -110, path: null
+2023-08-31 13:56:25,690 [myid:] - DEBUG [main:DataTree@893] - Deleting ephemeral node /service_mois_portainer/portainer/127.0.0.1:2181:9000 for session 0x100002eaebe0009
+2023-08-31 13:56:25,690 [myid:] - DEBUG [main:DataTree@873] - Ignoring processTxn failure hdr: -1 : error: -110
+2023-08-31 13:56:25,691 [myid:] - DEBUG [main:FileTxnSnapLog@275] - Ignoring processTxn failure hdr:-1, error: -110, path: null
+2023-08-31 13:56:25,691 [myid:] - DEBUG [main:DataTree@893] - Deleting ephemeral node /service_mois_portainer/portainer/127.0.0.1:2181:9000 for session 0x100002eaebe000c
+2023-08-31 13:56:25,691 [myid:] - DEBUG [main:DataTree@873] - Ignoring processTxn failure hdr: -1 : error: -110
+2023-08-31 13:56:25,691 [myid:] - DEBUG [main:FileTxnSnapLog@275] - Ignoring processTxn failure hdr:-1, error: -110, path: null
+2023-08-31 13:56:25,691 [myid:] - DEBUG [main:DataTree@893] - Deleting ephemeral node /service_mois_portainer/portainer2/127.0.0.1:2181:9000 for session 0x100002eaebe000e
+2023-08-31 13:56:25,692 [myid:] - DEBUG [main:DataTree@873] - Ignoring processTxn failure hdr: -1 : error: -110
+2023-08-31 13:56:25,692 [myid:] - DEBUG [main:FileTxnSnapLog@275] - Ignoring processTxn failure hdr:-1, error: -110, path: null
+2023-08-31 13:56:25,692 [myid:] - DEBUG [main:DataTree@893] - Deleting ephemeral node /service_mois_portainer3/portainer3/127.0.0.1:2181:9000 for session 0x100002eaebe0011
+2023-08-31 13:56:25,693 [myid:] - DEBUG [main:FileTxnLog$FileTxnIterator@643] - EOF excepton java.io.EOFException: Failed to read /var/log/zookeeper/version-2/log.f
+
+
+
+
+
+----------------------------------------------------------------------------------------------------
+
+###
+ЭТО СТАРТ KAZOO- КЛИЕНТА ЗУКИПЕРА  , СОЗДАНИЕ КАТАЛОГОВ И РЕГИСТРАЦИЯ СЕРВИСА ПОРТЕЙНЕР
+python2  kazoo_register_8_bin.py
+
+!!! zookeeper txntype:unknown reqpath
+ПИШУТ ЧТО ЭТО НЕ ОШИБКА---
+https://github.com/wso2/product-ei/issues/3931
+
+
+Получено исключение KeeperException пользовательского уровня при обработке sessionid:0x1000065656e0001 тип:create cxid:0x1 zxid:0x4f txntype:-1 reqpath:n/ путь к ошибке:/ошибка service_mois_portainer3/портейнер3:KeeperErrorCode = NodeExists для /service_mois_portainer3/портейнер3
+— это тоже не ошибка- Это нормально, потому что некоторых путей еще не существует. В то же время вы также получаете NodeExistsсообщения, поскольку путь уже существует.
+https://stackoverflow.com/questions/43559328/got-user-level-keeperexception-when-processing
+###
+
+
+2023-08-31 14:02:18,894 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /127.0.0.1:48858
+2023-08-31 14:02:18,900 [myid:] - DEBUG [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@891] - Session establishment request from client /127.0.0.1:48858 client's lastZxid is 0x0
+2023-08-31 14:02:18,901 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /127.0.0.1:48858
+2023-08-31 14:02:18,902 [myid:] - INFO  [SyncThread:0:FileTxnLog@213] - Creating new log file: log.4b
+2023-08-31 14:02:18,906 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0000 type:createSession cxid:0x0 zxid:0x4b txntype:-10 reqpath:n/a
+2023-08-31 14:02:18,907 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@161] - sessionid:0x1000065656e0000 type:createSession cxid:0x0 zxid:0x4b txntype:-10 reqpath:n/a
+2023-08-31 14:02:18,909 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x1000065656e0000 with negotiated timeout 10000 for client /127.0.0.1:48858
+2023-08-31 14:02:18,922 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0000 type:exists cxid:0x1 zxid:0xfffffffffffffffe txntype:unknown reqpath:/service_mois_portainer3
+2023-08-31 14:02:18,922 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@161] - sessionid:0x1000065656e0000 type:exists cxid:0x1 zxid:0xfffffffffffffffe txntype:unknown reqpath:/service_mois_portainer3
+2023-08-31 14:02:18,930 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0000 type:exists cxid:0x2 zxid:0xfffffffffffffffe txntype:unknown reqpath:/
+2023-08-31 14:02:18,931 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@161] - sessionid:0x1000065656e0000 type:exists cxid:0x2 zxid:0xfffffffffffffffe txntype:unknown reqpath:/
+2023-08-31 14:02:18,940 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0000 type:create cxid:0x3 zxid:0x4c txntype:1 reqpath:n/a
+2023-08-31 14:02:18,941 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@161] - sessionid:0x1000065656e0000 type:create cxid:0x3 zxid:0x4c txntype:1 reqpath:n/a
+2023-08-31 14:02:18,945 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0000 type:exists cxid:0x4 zxid:0xfffffffffffffffe txntype:unknown reqpath:/service_mois_portainer3/portainer3
+2023-08-31 14:02:18,945 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@161] - sessionid:0x1000065656e0000 type:exists cxid:0x4 zxid:0xfffffffffffffffe txntype:unknown reqpath:/service_mois_portainer3/portainer3
+2023-08-31 14:02:18,947 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0000 type:exists cxid:0x5 zxid:0xfffffffffffffffe txntype:unknown reqpath:/service_mois_portainer3
+2023-08-31 14:02:18,947 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@161] - sessionid:0x1000065656e0000 type:exists cxid:0x5 zxid:0xfffffffffffffffe txntype:unknown reqpath:/service_mois_portainer3
+2023-08-31 14:02:18,951 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0000 type:create cxid:0x6 zxid:0x4d txntype:1 reqpath:n/a
+2023-08-31 14:02:18,952 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@161] - sessionid:0x1000065656e0000 type:create cxid:0x6 zxid:0x4d txntype:1 reqpath:n/a
+2023-08-31 14:02:18,955 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@215] - Accepted socket connection from /127.0.0.1:48860
+2023-08-31 14:02:18,956 [myid:] - DEBUG [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@891] - Session establishment request from client /127.0.0.1:48860 client's lastZxid is 0x0
+2023-08-31 14:02:18,956 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /127.0.0.1:48860
+2023-08-31 14:02:18,958 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0001 type:createSession cxid:0x0 zxid:0x4e txntype:-10 reqpath:n/a
+2023-08-31 14:02:18,958 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@161] - sessionid:0x1000065656e0001 type:createSession cxid:0x0 zxid:0x4e txntype:-10 reqpath:n/a
+2023-08-31 14:02:18,959 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x1000065656e0001 with negotiated timeout 5000 for client /127.0.0.1:48860
+2023-08-31 14:02:18,964 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@653] - Got user-level KeeperException when processing sessionid:0x1000065656e0001 type:create cxid:0x1 zxid:0x4f txntype:-1 reqpath:n/a Error Path:/service_mois_portainer3/portainer3 Error:KeeperErrorCode = NodeExists for /service_mois_portainer3/portainer3
+2023-08-31 14:02:18,965 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0001 type:create cxid:0x1 zxid:0x4f txntype:-1 reqpath:n/a
+2023-08-31 14:02:18,966 [myid:] - DEBUG [SyncThread:0:DataTree@873] - Ignoring processTxn failure hdr: -1 : error: -110
+2023-08-31 14:02:18,968 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0001 type:exists cxid:0x2 zxid:0xfffffffffffffffe txntype:unknown reqpath:/service_mois_portainer3/portainer3
+2023-08-31 14:02:18,969 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@161] - sessionid:0x1000065656e0001 type:exists cxid:0x2 zxid:0xfffffffffffffffe txntype:unknown reqpath:/service_mois_portainer3/portainer3
+2023-08-31 14:02:18,972 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0001 type:create cxid:0x3 zxid:0x50 txntype:1 reqpath:n/a
+2023-08-31 14:02:18,973 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@161] - sessionid:0x1000065656e0001 type:create cxid:0x3 zxid:0x50 txntype:1 reqpath:n/a
+2023-08-31 14:02:18,975 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x1000065656e0000
+2023-08-31 14:02:18,977 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@89] - Processing request:: sessionid:0x1000065656e0000 type:closeSession cxid:0x7 zxid:0x51 txntype:-11 reqpath:n/a
+2023-08-31 14:02:18,977 [myid:] - DEBUG [SyncThread:0:FinalRequestProcessor@161] - sessionid:0x1000065656e0000 type:closeSession cxid:0x7 zxid:0x51 txntype:-11 reqpath:n/a
+2023-08-31 14:02:18,979 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /127.0.0.1:48858 which had sessionid 0x1000065656e0000
+2023-08-31 14:02:18,985 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x1000065656e0001, likely client has closed socket
+2023-08-31 14:02:18,986 [myid:] - DEBUG [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@378] - EndOfStreamException stack trace
+EndOfStreamException: Unable to read additional data from client sessionid 0x1000065656e0001, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:250)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:226)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2023-08-31 14:02:18,989 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /127.0.0.1:48860 which had sessionid 0x1000065656e0001
+

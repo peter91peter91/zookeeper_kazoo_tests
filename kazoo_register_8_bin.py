@@ -15,20 +15,19 @@ zk = KazooClient(hosts='172.17.0.3:2181')
 zk.start()
 
 # Ensure a path, create if necessary
-zk.ensure_path("/service_mois_portainer")
-
+zk.ensure_path("/service_mois_portainer3")
 
 ########################################################################################
 def register(client):
     while True:
         if client.state == 'CONNECTED':
             try:
-                client.create('/service_mois_portainer/portainer', ephemeral=False, makepath=True)
+                client.create('/service_mois_portainer3/portainer3', ephemeral=False, makepath=True)
             except NodeExistsError:
                 pass
             try:
 
-                client.register_server('/service_mois_portainer/portainer', ('172.17.0.3:2181', 9000))
+                client.register_server('/service_mois_portainer3/portainer3', ('172.17.0.3:2181', 9000))
                 break
             except NodeExistsError:
                 print('waiting for registration...')
@@ -38,13 +37,13 @@ def register(client):
             sleep(0.5)
 
 # register service
-ias_registration = zc.zk.ZooKeeper('172.17.0.3:2181', session_timeout=5, wait=True)
-register(ias_registration)
+portainer_registration = zc.zk.ZooKeeper('172.17.0.3:2181', session_timeout=5, wait=True)
+register(portainer_registration)
 
 #show state in console
 current_datetime = datetime.now()
 ttt = str(current_datetime)
-print(ttt +"ias_registration1"+  ias_registration.state)
+print(ttt +"portainer3"+  portainer_registration.state)
 
 
 ###########
