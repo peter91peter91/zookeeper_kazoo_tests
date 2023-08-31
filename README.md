@@ -1,7 +1,5 @@
 # zookeeper_kazoo_tests
 
-(логи с разбором здесь logs_zookeeper_with_comments.out)
-
 1.1)стартуем зукипер
 docker pull zookeeper:3.8.2
 docker run --name ZK382 -t -i zookeeper:3.8.2
@@ -25,7 +23,8 @@ python get-pip.py
 pip install zc.zk
 
 4)запускаем мой скрипт подключения,создания древа и  регистрации  сервиса, к примеру, портейнера http://127.0.0.1:9000/
-+++скрипт с исключениями,проверками  kazoo_register_8_bin.py
++++скрипт с исключениями,проверками
+python2 kazoo_register_0.py
 
         совсем сухой скрипт 
         python2 kazoo_register_0_short.py
@@ -34,4 +33,3 @@ pip install zc.zk
 и спустя 5сек удаляется узел со свежевыданным PID "процесса слежения" внутри {"pid":26303}
 
 .....Error: KeeperErrorCode = NoNode for /service_mois_portainer/local_portainer/172.17.0.3:2181:9000
-
