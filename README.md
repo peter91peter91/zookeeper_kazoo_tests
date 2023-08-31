@@ -1,4 +1,5 @@
 # zookeeper_kazoo_tests
+логи с разбором здесь   logs_zookeeper_with_comments.out
 
 
 1.1)стартуем зукипер
